@@ -17,3 +17,21 @@
 @import "bootstrap";
 
 
+.index {
+	text-align: center;
+}
+
+.card {
+	display: inline-block;
+	
+	button {
+		background-color: #fff;
+		border-color: #0b8ec8;
+		border-radius: 100%;
+		margin-right: 10px;
+	}
+
+		.card:hover {
+			background-color: #0b8ec8;
+		}
+}

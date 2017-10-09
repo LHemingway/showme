@@ -1,38 +1,30 @@
-<h1>Listing projects</h1>
+<h1 class="index">Current Sparta Projects</h1>
 
-
-<% @projects.each do |project| %>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-3">
-      <section class="aboutCard">
+<div class="row">
+  <% @projects.each do |project| %>
+    <div class="container-fluid">
+      <div class="col-md-3">
         <div class="card cards">
-          <div class="card-body">
-
-            
-            
-                <div><%= project.screenshot %></div>
-                <div><%= project.description %></div>
-                <div><%= project.technologies %></div>
-                <div><%= project.url %></div>
-                <div><%= project.public_private %></div>
-                <div><%= link_to 'Show', [project.user, project] %></div>
-                <div><%= link_to 'Edit', edit_user_project_path(project.user, project) %></div>
-                <div><%= link_to 'Destroy', [project.user, project], :confirm => 'Are you sure?', :method => :delete %></div>
-   
-            
-
+          <div class="card-body card">
+            <div><%= project.screenshot %></div>
+            <div><%= project.description %></div>
+            <div><%= project.technologies %></div>
+            <div><h6>Project URL</h6><%= project.url %></div>
+            <div><%= project.public_private %></div>
+            <button><%= link_to 'Show', [project.user, project] %></button>
+            <button><%= link_to 'Edit', edit_user_project_path(project.user, project) %></button>
+            <button><%= link_to 'Destroy', [project.user, project], :confirm => 'Are you sure?', :method => :delete %>
+            </button>
           </div>
         </div>
-      </section>
+      </div>
     </div>
-  </div>
+  <% end %>
 </div>
-<% end %>
 
 <br />
 
-<%= link_to 'New Project', new_user_project_path(current_user.id) %>
+<button class="index"><%= link_to 'New Project', new_user_project_path(current_user.id) %></button>
 
 
 
