@@ -1,31 +1,39 @@
 <h1>Listing projects</h1>
 
-<table>
-  <tr>
-    <th>Screenshot</th>
-    <th>Description</th>
-    <th>Technologies</th>
-    <th>Url</th>
-    <th>Public private</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @projects.each do |project| %>
-  <tr>
-    <td><%= project.screenshot %></td>
-    <td><%= project.description %></td>
-    <td><%= project.technologies %></td>
-    <td><%= project.url %></td>
-    <td><%= project.public_private %></td>
-    <td><%= link_to 'Show', [project.user, project] %></td>
-    <td><%= link_to 'Edit', edit_user_project_path(project.user, project) %></td>
-    <td><%= link_to 'Destroy', [project.user, project], :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3">
+      <section class="aboutCard">
+        <div class="card cards">
+          <div class="card-body">
+
+            
+            
+                <div><%= project.screenshot %></div>
+                <div><%= project.description %></div>
+                <div><%= project.technologies %></div>
+                <div><%= project.url %></div>
+                <div><%= project.public_private %></div>
+                <div><%= link_to 'Show', [project.user, project] %></div>
+                <div><%= link_to 'Edit', edit_user_project_path(project.user, project) %></div>
+                <div><%= link_to 'Destroy', [project.user, project], :confirm => 'Are you sure?', :method => :delete %></div>
+   
+            
+
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
 <% end %>
-</table>
 
 <br />
 
 <%= link_to 'New Project', new_user_project_path(current_user.id) %>
+
+
+
+        
