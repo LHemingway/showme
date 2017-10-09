@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Screenshot:</b>
+  <%= @project.screenshot %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @project.description %>
+</p>
+
+<p>
+  <b>Technologies:</b>
+  <%= @project.technologies %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @project.url %>
+</p>
+
+<p>
+  <b>Public private:</b>
+  <%= @project.public_private %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_project_path(@project.user, @project) %> |
+<%= link_to 'Back', user_projects_path(@project.user) %>
