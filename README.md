@@ -22,3 +22,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+# showme
+A repository for my second project on the Engineering course at Sparta Global - Built in Ruby-on-Rails
+
+abass
+
