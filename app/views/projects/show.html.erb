@@ -5,9 +5,6 @@
       <div class="card cards">
         <div class="card-body card">
           
-          <div>
-            <img src="<%= @project.screenshot %>">
-          </div>
           
           <p>
             <h4>Description:</h4>
@@ -28,11 +25,14 @@
             <h4>Public private:</h4>
             <%= @project.public_private %>
           </p>
-          
-          
-          <button> <%= link_to 'Edit', edit_user_project_path(@project.user, @project) %> </button>
-          <button> <%= link_to 'Destroy', user_project_path(@current_user, @project), method: :delete, data: { confirm: 'Are you sure?' } %> </button>
+
           <button> <%= link_to 'Homepage', user_projects_path(@project.user) %> </button>
+          
+          <% if user_signed_in? %>
+            <button> <%= link_to 'Edit', edit_user_project_path(@project.user, @project) %> </button>
+            <button> <%= link_to 'Destroy', user_project_path(@current_user, @project), method: :delete, data: { confirm: 'Are you sure?' } %> </button>
+            
+          <% end %>
         </div>
       </div>
     </div>

@@ -11,8 +11,11 @@ class ProjectsController < ApplicationController
     @projects = @user.projects
   end
 
+
+
   # GET users/1/projects/1
   def show
+
   end
 
   # GET users/1/projects/new
@@ -63,7 +66,7 @@ class ProjectsController < ApplicationController
       if user_signed_in?
         @project = @user.projects.find(params[:id])
       else
-        @project = projects.find(params[:id])
+        @project = Project.find(params[:id])
       end
     end
 
