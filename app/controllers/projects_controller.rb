@@ -54,11 +54,17 @@ class ProjectsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_projects
-      @user = User.find(current_user.id)
+      if user_signed_in?
+        @user = User.find(current_user.id)
+      end
     end
 
     def set_project
-      @project = @user.projects.find(params[:id])
+      if user_signed_in?
+        @project = @user.projects.find(params[:id])
+      else
+        @project = projects.find(params[:id])
+      end
     end
 
     # Only allow a trusted parameter "white list" through.
