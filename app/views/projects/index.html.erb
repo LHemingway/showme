@@ -46,14 +46,8 @@
         <div class="card cards">
           <div class="card-body card">
             <div><%= project.screenshot %></div>
-            <div><%= project.description %></div>
-            <div><%= project.technologies %></div>
             <div><h6>Project URL</h6><%= project.url %></div>
-            <div><%= project.public_private %></div>
-            <button><%= link_to 'Show', [project.user, project] %></button>
-            <button><%= link_to 'Edit', edit_user_project_path(project.user, project) %></button>
-            <button><%= link_to 'Destroy', [project.user, project], :confirm => 'Are you sure?', :method => :delete %>
-            </button>
+            <a><%= link_to project.screenshot, [project.user, project] %></a>
           </div>
         </div>
       </div>
