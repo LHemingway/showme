@@ -60,7 +60,11 @@ class ProjectsController < ApplicationController
     end
 
     def set_project
-      @project = @user.projects.find(params[:id])
+      if user_signed_in?
+        @project = @user.projects.find(params[:id])
+      else
+        @project = projects.find(params[:id])
+      end
     end
 
     # Only allow a trusted parameter "white list" through.

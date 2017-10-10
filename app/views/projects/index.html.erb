@@ -45,9 +45,9 @@
       <div class="col-3">
         <div class="card cards">
           <div class="card-body card">
-            <div><%= project.screenshot %></div>
-            <div><h6>Project URL</h6><%= project.url %></div>
+            <img src="<%= project.screenshot %>">
             <a><%= link_to project.screenshot, [project.user, project] %></a>
+            <p><%= project.url %></p>
           </div>
         </div>
       </div>
