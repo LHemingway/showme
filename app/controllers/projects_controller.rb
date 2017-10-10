@@ -54,7 +54,9 @@ class ProjectsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_projects
-      @user = User.find(current_user.id)
+      if user_signed_in?
+        @user = User.find(current_user.id)
+      end
     end
 
     def set_project
