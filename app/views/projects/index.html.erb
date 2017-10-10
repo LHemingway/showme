@@ -1,3 +1,4 @@
+
 <div class="container-fluid">
   <div class="row">
     <div class="col-12">
@@ -32,33 +33,3 @@
 
 
 
-
-
-
-
-
-<h1 class="index">Current Sparta Projects</h1>
-
-<div class="container-fluid">
-  <div class="row">
-    <% @projects.each do |project| %>
-      <div class="col-3">
-        <div class="card cards">
-          <div class="card-body card">
-            <img src="<%= project.screenshot %>">
-            <a><%= link_to project.screenshot, [project.user, project] %></a>
-            <p><%= project.url %></p>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</div>
-
-
-<br />
-
-
-
-
-        
