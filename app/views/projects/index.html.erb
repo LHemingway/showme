@@ -14,10 +14,10 @@
 
 <% @projects.each do |project| %>
   <tr>
-    <td><%= project.screenshot %></td>
+    <td><%= image_tag project.screenshot %></td>
     <td><%= project.description %></td>
     <td><%= project.technologies %></td>
-    <td><%= project.url %></td>
+    <td> <a href="<%=project.url%>"> <%= project.url %> </a> </td>
     <td><%= project.public_private %></td>
     <td><%= link_to 'Show', [project.user, project] %></td>
     <td><%= link_to 'Edit', edit_user_project_path(project.user, project) %></td>
