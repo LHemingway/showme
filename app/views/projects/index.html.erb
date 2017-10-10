@@ -6,7 +6,8 @@
       <div class="col-3">
         <div class="card cards">
           <div class="card-body card">
-            <div><%= image_tag project.screenshot, class:"rounded-circle mx-auto d-block skyline img-fluid", alt:"a screenshot of the project", width:"800" %></div>
+            <div class="container-fluid"><%= image_tag project.screenshot, class:"rounded-circle mx-auto d-block skyline img-fluid", alt:"a screenshot of the project",  width:"50%"%></div>
+            <div><%= project.title %></div>
             <div><%= project.description %></div>
             <div><%= project.technologies %></div>
             <div><h6>Project URL</h6> <a href="<%=project.url%>"> <%= project.url %> </a> </div>
