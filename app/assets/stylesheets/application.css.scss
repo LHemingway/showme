@@ -16,6 +16,58 @@
 
 @import "bootstrap";
 
+
+ .navbar  {
+   background-color:#EEF4F6;
+   list-style-type: none;
+   display: inline-block;
+}
+
+.navbar-default{
+ 	display: inline-block;
+}
+.navbar-nav{
+	display: inline-block;
+}
+.blue{
+	display: inline-block;
+}
+.blue > ul > li {
+	display: inline-block;
+}
+
+.blue > ul > li > a:hover, .nav> li > a:focus {
+	background-color: #34BEEF;
+	color: #FFFFFF;
+}
+ .navbar .navbar-default > li > a:hover, .nav > li > a:focus {
+     background-color: #34BEEF;
+     color: #FFC0CB;
+}
+.logo {
+    display: inline-block;
+    vertical-align: top;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    margin-top: 15px;
+}
+
+.btn-outline-success {
+	background-color: #34BEEF;
+	color: #ffffff;
+	border: 1px solid blue;
+	display: inline-block;
+
+}
+
+.btn-outline-success:hover{
+	background-color: #0B8EC8;
+	border: 1px solid blue;
+}
+
+
+=======
 body {
 	background-color: #eef4f6;
 }
