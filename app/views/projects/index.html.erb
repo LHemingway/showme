@@ -1,31 +1,47 @@
-<h1>Listing projects</h1>
 
-<table>
-  <tr>
-    <th>Screenshot</th>
-    <th>Description</th>
-    <th>Technologies</th>
-    <th>Url</th>
-    <th>Public private</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @projects.each do |project| %>
-  <tr>
-    <td><%= project.screenshot %></td>
-    <td><%= project.description %></td>
-    <td><%= project.technologies %></td>
-    <td><%= project.url %></td>
-    <td><%= project.public_private %></td>
-    <td><%= link_to 'Show', [project.user, project] %></td>
-    <td><%= link_to 'Edit', edit_user_project_path(project.user, project) %></td>
-    <td><%= link_to 'Destroy', [project.user, project], :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+<!-- NavBar area -->
+<div class="row">
 
-<br />
+<!-- NavBar -->
+  <div class="col-12">col-12</div>
+</div>
+
+<!-- Title -->
+<h1>Sparta Project Gallery</h1>
+
+<!-- Body of the site -->
+<div class="row">
+
+<!-- profile area -->
+
+
+<!-- list area with cards -->
+<div class="col-8">
+    <nav aria-label="the list">
+        <ul class="pagination">
+            <div class="container-fluid">
+              <div class="row">
+                <% @projects.each do |project| %>
+                    <div class="card cards">
+                      <div class="card-body card">
+                        <img src="<%= project.screenshot %>">
+                        <a><%= link_to project.screenshot, [project.user, project] %></a>
+                        <p class="card-text"><%= project.url %></p>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+            <div class="card" style="width: 20rem;">
+                <img class="card-img-top" src="http://www.fillmurray.com/g/300/300" alt="Card image cap">
+                <div class="card-body">
+                <p class="card-text">Squash-A-Bug</p>
+                </div>
+            </div>
+        </ul>
+    </nav>
+</div>
 
 <%= link_to 'New Project', new_user_project_path(current_user.id) %>
