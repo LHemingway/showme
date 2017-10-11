@@ -41,7 +41,7 @@
 
   <div class="field">
     <%= f.label :course_path %><br />
-    <%= f.select :course_path, ['sdet', 'ba', '#baller', 'N/A'] , :prompt => 'Select your course path'%>
+    <%= f.select :course_path, ['Engineering', 'Business'] , :prompt => 'Select your course path'%>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
