@@ -30,7 +30,3 @@
     </div>
 </div>
 
-<% if user_signed_in? %>
-  <button class="newButton"><%= link_to 'Create a new project here', new_user_project_path(current_user.id) %></button>
-
-<% end %>
