@@ -1,30 +1,40 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Screenshot:</b>
-  <%= @project.screenshot %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @project.description %>
-</p>
-
-<p>
-  <b>Technologies:</b>
-  <%= @project.technologies %>
-</p>
-
-<p>
-  <b>Url:</b>
-  <%= @project.url %>
-</p>
-
-<p>
-  <b>Public private:</b>
-  <%= @project.public_private %>
-</p>
-
-
-<%= link_to 'Edit', edit_user_project_path(@project.user, @project) %> |
-<%= link_to 'Back', user_projects_path(@project.user) %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="card cards">
+        <div class="card-body card">
+          
+          <div>
+            <img src="<%= @project.screenshot %>">
+          </div>
+          
+          <p>
+            <h4>Description:</h4>
+            <%= @project.description %>
+          </p>
+          
+          <p>
+            <h4>Technologies:</h4>
+            <%= @project.technologies %>
+          </p>
+          
+          <p>
+            <h4>Url:</h4>
+            <%= @project.url %>
+          </p>
+          
+          <p>
+            <h4>Public private:</h4>
+            <%= @project.public_private %>
+          </p>
+          
+          
+          <button> <%= link_to 'Edit', edit_user_project_path(@project.user, @project) %> </button>
+          <button> <%= link_to 'Destroy', user_project_path(@current_user, @project), method: :delete, data: { confirm: 'Are you sure?' } %> </button>
+          <button> <%= link_to 'Homepage', user_projects_path(@project.user) %> </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

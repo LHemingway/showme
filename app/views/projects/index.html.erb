@@ -1,47 +1,25 @@
 
-
-<!-- NavBar area -->
-<div class="row">
-
-<!-- NavBar -->
-  <div class="col-12">col-12</div>
-</div>
-
-<!-- Title -->
-<h1>Sparta Project Gallery</h1>
-
-<!-- Body of the site -->
-<div class="row">
-
-<!-- profile area -->
-
-
-<!-- list area with cards -->
-<div class="col-8">
-    <nav aria-label="the list">
-        <ul class="pagination">
-            <div class="container-fluid">
-              <div class="row">
-                <% @projects.each do |project| %>
-                    <div class="card cards">
-                      <div class="card-body card">
-                        <img src="<%= project.screenshot %>">
-                        <a><%= link_to project.screenshot, [project.user, project] %></a>
-                        <p class="card-text"><%= project.url %></p>
-                      </div>
-                    </div>
-                  </div>
-                <% end %>
+<!-- column 1, container of cards -->
+<div class="container">
+  <div class="row">
+    <div class="col">
+        <% @projects.each do |project| %>
+            <div class="card cards">
+              <div class="card-body card">
+                <img src="<%= project.screenshot %>">
+                <a><%= link_to project.title, [project.user, project] %></a>
               </div>
             </div>
-            <div class="card" style="width: 20rem;">
-                <img class="card-img-top" src="http://www.fillmurray.com/g/300/300" alt="Card image cap">
-                <div class="card-body">
-                <p class="card-text">Squash-A-Bug</p>
-                </div>
-            </div>
-        </ul>
-    </nav>
-</div>
+          </div>
+        <% end %>
+    </div>
+    </div>
 
-<%= link_to 'New Project', new_user_project_path(current_user.id) %>
+
+<br />
+<!-- part of ode only allowing signed in members to create new projects  -->
+<% if user_signed_in? %>
+<button class="newButton"><%= link_to 'Create a new project here', new_user_project_path(current_user.id) %></button>
+
+<% end %>
+
