@@ -16,9 +16,9 @@
   </div>
 </div>
 
-
 <br />
 
+<!-- If the user is signed in, they have rights to create a new project -->
 <% if user_signed_in? %>
 <button class="newButton"><%= link_to 'Create a new project here', new_user_project_path(current_user.id) %></button>
 

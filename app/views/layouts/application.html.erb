@@ -7,11 +7,11 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-<!--<a class="navbar-brand" href="#">Navbar</a>-->
     
  
   <body>
 
+  <!-- This navbar allows user to login, logout, sign up etc -->
     <p class="navbar-text pull-right">
       <% if user_signed_in? %>
         Logged in as <strong><%= current_user.email %></strong>

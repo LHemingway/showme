@@ -28,10 +28,10 @@
 
           <button> <%= link_to 'Homepage', user_projects_path(@project.user) %> </button>
           
+          <!-- If the user is signed in, then they have access to these buttons -->
           <% if user_signed_in? %>
             <button> <%= link_to 'Edit', edit_user_project_path(@project.user, @project) %> </button>
             <button> <%= link_to 'Destroy', user_project_path(@current_user, @project), method: :delete, data: { confirm: 'Are you sure?' } %> </button>
-            
           <% end %>
         </div>
       </div>
