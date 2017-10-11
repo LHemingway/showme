@@ -1,1 +1,76 @@
 
+
+@import "bootstrap";
+
+.blue > ul > li > a:hover, .nav> li > a:focus {
+	background-color: #34BEEF;
+	color: #FFFFFF;
+}
+ .navbar {
+     color: #FFC0CB;
+     margin-bottom:0;
+}
+
+.card {
+	width: 400px;
+	height: 400px;
+}
+
+a:hover {
+	background-color: #acaeaf;
+	text-decoration: none;
+	color: white;
+}
+
+.jumbotron {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+.logo {
+    display: inline-block;
+    vertical-align: top;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    margin-top: 15px;
+}
+
+.btn-outline-success {
+	background-color: #34BEEF;
+	color: #ffffff;
+	border: 1px solid blue;
+	display: inline-block;
+
+}
+
+.btn-outline-success:hover{
+	background-color: #0B8EC8;
+	border: 1px solid blue;
+}
+
+
+
+.index {
+	text-align: center;
+}
+
+.newButton {
+		background-color: #fff;
+		border-color: #0b8ec8;
+		margin-right: 10px;
+		color: black;
+
+		a:hover{
+			background-color: #fff;
+			text-decoration: none;
+			color: black;
+		}
+}
+
+.card {
+	border: none;
+	text-align: center;
+
+}
+
