@@ -13,3 +13,4 @@ project2 = Project.create(screenshot: "http://fillmurray.com/300/300", descripti
 
 user1.projects << project1
 user1.projects << project2
+user1.save

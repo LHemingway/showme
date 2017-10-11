@@ -1,3 +1,4 @@
 class Project < ApplicationRecord
-  belongs_to :user
+  has_many :users_projects
+	has_many :users, through: :users_projects
 end
