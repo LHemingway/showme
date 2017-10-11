@@ -4,18 +4,28 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :firstnames %><br />
-    <%= f.text_field :firstnames, autofocus: true %>
+    <%= f.label :first_names %><br />
+    <%= f.text_field :first_names, autofocus: true %>
   </div>
 
   <div class="field">
     <%= f.label :surname %><br />
-    <%= f.text_field :surename, autofocus: true %>
+    <%= f.text_field :surname, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :start_date %><br />
+    <%= f.date_field :start_date, autofocus: true %>
   </div>
 
   <div class="field">
     <%= f.label :course_path %><br />
-    <%= f.text_field :course_path, autofocus: true %>
+    <%= f.select :course_path, ['sdet', 'ba']%>
+  </div>
+
+  <div class="field">
+    <%= f.label :avatar %><br />
+    <%= f.text_field :avatar, autofocus: true %>
   </div>
 
   <div class="field">

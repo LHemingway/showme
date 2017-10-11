@@ -19,7 +19,6 @@ project9 = Project.create(screenshot: "http://fillmurray.com/400/300", descripti
 project10= Project.create(screenshot: "http://fillmurray.com/400/300", description: "Desc2", technologies: "JQuery", url: "http://fillmurray.com/300/300", public_private: true, title:"Project osphellius 1")
 
 
-
 user1.projects << project2
 user1.projects << project3
 user1.projects << project4
@@ -29,3 +28,6 @@ user1.projects << project7
 user1.projects << project8
 user1.projects << project9
 user1.projects << project10
+user1.save
+
+

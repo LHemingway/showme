@@ -13,13 +13,16 @@
     </div>
 
 
+
     <div class="row">
         <% @projects.each do |project| %>
             <div class="col-md-4 col-sm-6 col-xs-12">
                 <div class="card cards">
                     <div class="card-body card">
                         <img src="<%= project.screenshot %>">
-                        <a><%= link_to project.title, [project.user, project] %></a>
+                          <% user = user_signed_in? ? current_user : project.users.first %>   
+                            <%= link_to project.title, user_project_url(user.id, project.id) %>
+                         <p> <a href="<%= project.url %>" target="_blank"> Project Link </a> </p>
                     </div>
                 </div>
             </div>  
@@ -27,4 +30,7 @@
     </div>
 </div>
 
+<% if user_signed_in? %>
+  <button class="newButton"><%= link_to 'Create a new project here', new_user_project_path(current_user.id) %></button>
 
+<% end %>

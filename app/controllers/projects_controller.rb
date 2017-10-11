@@ -3,42 +3,52 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   def index
+    if user_signed_in?
+      @user = current_user
+    else
+      @user = nil
+    end
     @projects = Project.all
   end
 
   # GET users/1/projects
   def index_user
+    @user = User.find(params[:id])
     @projects = @user.projects
   end
 
   # GET users/1/projects/1
   def show
+    @user = User.find(params[:user_id])
+    @project = Project.find(params[:id])
   end
 
   # GET users/1/projects/new
   def new
-    @project = @user.projects.build
+    @project = Project.new
   end
 
-  # GET users/1/projects/1/edit
-  def edit
-  end
+  
 
   # POST users/1/projects
   def create
-    @project = @user.projects.build(project_params)
+    @project = @user.projects.create(project_params)
 
     if @project.save
-      redirect_to([@project.user, @project], notice: 'Project was successfully created.')
+      redirect_to(user_projects_path(@project), notice: 'Project was successfully created.')
     else
       render action: 'new'
     end
   end
 
+# GET users/1/projects/1/edit
+  def edit
+  end
+  
   # PUT users/1/projects/1
   def update
     if @project.update_attributes(project_params)
-      redirect_to([@project.user, @project], notice: 'Project was successfully updated.')
+      redirect_to "/", notice: 'Project was successfully updated.'
     else
       render action: 'edit'
     end
@@ -60,11 +70,8 @@ class ProjectsController < ApplicationController
     end
 
     def set_project
-      if user_signed_in?
-        @project = @user.projects.find(params[:id])
-      else
-        @project = projects.find(params[:id])
-      end
+      @project = Project.find(params[:id])
+      @user = @project.users.first
     end
 
     # Only allow a trusted parameter "white list" through.
