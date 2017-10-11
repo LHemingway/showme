@@ -11,6 +11,8 @@ class ProjectsController < ApplicationController
     @projects = @user.projects
   end
 
+
+
   # GET users/1/projects/1
   def show
   end
@@ -59,11 +61,13 @@ class ProjectsController < ApplicationController
       end
     end
 
+    # The if statement allow the user to acess the edit, delete buttons on show
+    # The else allows the public to see the show, but only access to the homepage button
     def set_project
       if user_signed_in?
         @project = @user.projects.find(params[:id])
       else
-        @project = projects.find(params[:id])
+        @project = Project.find(params[:id])
       end
     end
 
