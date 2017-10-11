@@ -2,6 +2,13 @@ class ProjectsController < ApplicationController
   before_action :set_projects
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
+  def search_bar
+    
+  end
+
+
+
+
   def index
     if user_signed_in?
       @user = current_user
