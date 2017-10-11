@@ -16,32 +16,31 @@
 
 @import "bootstrap";
 
-
- .navbar  {
-   list-style-type: none;
-   display: inline-block;
-}
-
-.navbar-default{
- 	display: inline-block;
-}
-.navbar-nav{
-	display: inline-block;
-}
-.blue{
-	display: inline-block;
-}
-.blue > ul > li {
-	display: inline-block;
-}
-
 .blue > ul > li > a:hover, .nav> li > a:focus {
 	background-color: #34BEEF;
 	color: #FFFFFF;
 }
- .navbar .navbar-default > li > a:hover, .nav > li > a:focus {
+ .navbar {
      color: #FFC0CB;
+     margin-bottom:0;
 }
+
+.card {
+	width: 400px;
+	height: 400px;
+}
+
+a:hover {
+	background-color: #acaeaf;
+	text-decoration: none;
+	color: white;
+}
+
+.jumbotron {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
 .logo {
     display: inline-block;
     vertical-align: top;
@@ -66,14 +65,6 @@
 
 
 
-.carousel {
-	text-align: center;
-	.arrows {
-		background-color: black;
-		color: black;
-	}
-}
-
 .index {
 	text-align: center;
 }
@@ -92,17 +83,7 @@
 }
 
 .card {
-	display: inline-block;
 	border: none;
 	text-align: center;
-
-		a:hover{
-
-			border-radius: 100%;
-			text-decoration: none;
-			color: black;
-		}
-	
-
 
 }

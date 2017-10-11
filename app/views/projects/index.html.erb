@@ -1,25 +1,30 @@
 
-<!-- column 1, container of cards -->
-<div class="container">
-  <div class="row">
-    <div class="col">
+<!-- column, container of cards -->
+<div class="container-fluid">
+    <!-- Jumbotron intro -->
+    <div class="jumbotron">
+        <h1 class="display-3">Hello, Spartan!</h1>
+        <p class="lead">Welcome to the Sparta Global Project Library</p>
+        <hr class="my-4">
+        <p>Use this site to upload and view data about your projects! make sure to fill out everything correctly, with a detailed description and a snazzy screenshot. </p>
+        <p class="lead">
+        <a class="btn btn-primary btn-lg" <%= link_to 'Create a Project', new_user_project_path(current_user.id) %></a>
+        </p>
+    </div>
+
+
+    <div class="row">
         <% @projects.each do |project| %>
-            <div class="card cards">
-              <div class="card-body card">
-                <img src="<%= project.screenshot %>">
-                <a><%= link_to project.title, [project.user, project] %></a>
-              </div>
-            </div>
-          </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="card cards">
+                    <div class="card-body card">
+                        <img src="<%= project.screenshot %>">
+                        <a><%= link_to project.title, [project.user, project] %></a>
+                    </div>
+                </div>
+            </div>  
         <% end %>
     </div>
-    </div>
+</div>
 
-
-<br />
-<!-- part of ode only allowing signed in members to create new projects  -->
-<% if user_signed_in? %>
-<button class="newButton"><%= link_to 'Create a new project here', new_user_project_path(current_user.id) %></button>
-
-<% end %>
 
