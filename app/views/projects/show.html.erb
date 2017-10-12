@@ -3,8 +3,7 @@
   <div class="row">
     <div class="col-6">
       <div class="card cards">
-        <div class="card-body card">
-          
+        <div class="card-body card">         
           <p>
             <h4>Description:</h4>
             <%= @project.description %>
@@ -27,7 +26,7 @@
             <button> <%= link_to 'Edit', edit_user_project_path(current_user, @project, @project) %> </button>
             <button> <%= link_to 'Destroy', user_project_path(@current_user, @project), method: :delete, data: { confirm: 'Are you sure?' } %> </button>
           <% end %>
-
+     
         </div>
       </div>
     </div>
