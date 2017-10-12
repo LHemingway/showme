@@ -69,7 +69,7 @@ $screen-xl-min: 1200px;
 
 // 768px window width and more
     @include md {
-    	 .col {
+    	 .col{
     		position: relative;
    			top: -40px;
    			left: -175px;

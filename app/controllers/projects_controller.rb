@@ -56,7 +56,7 @@ class ProjectsController < ApplicationController
   def update
     if @project.update_attributes(project_params)
       #redirect to home with the notice that project has been successfully updated
-      redirect_to "/", notice: 'Project was successfully updated.'
+      redirect_to project_params, notice: 'Project was successfully updated.'
     else
       render action: 'edit'
     end
