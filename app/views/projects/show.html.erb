@@ -22,7 +22,7 @@
 
           <button> <%= link_to 'Homepage', user_projects_path(@project) %> </button>
           
-          <% if user_signed_in? %>  
+          <% if user_signed_in? %>
             <button> <%= link_to 'Edit', edit_user_project_path(current_user, @project, @project) %> </button>
             <button> <%= link_to 'Destroy', user_project_path(@current_user, @project), method: :delete, data: { confirm: 'Are you sure?' } %> </button>
           <% end %>
