@@ -2,12 +2,6 @@ class ProjectsController < ApplicationController
   before_action :set_projects
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
-  def search_bar
-    
-  end
-
-
-
 
   def index
     if user_signed_in?
@@ -49,7 +43,15 @@ class ProjectsController < ApplicationController
   end
 
 # GET users/1/projects/1/edit
+# The if statements allow the owner of the project to edit, and if it does not meet the method criteria
+# the user can not edit the project and is redirected to the homepage
   def edit
+    project_owner = current_user.projects.exists?(params[:id])
+    if project_owner
+      @project = current_user.projects.find(params[:id])
+    else
+      redirect_to root_path
+    end
   end
   
   # PUT users/1/projects/1
