@@ -8,7 +8,9 @@
         <hr class="my-4">
         <p class="JumboText">Use this site to upload and view data about your projects! make sure to fill out everything correctly, with a detailed description and a snazzy screenshot. </p>
         <p class="lead">
-        <a class="btn btn-primary btn-lg"> Contribute a Project </a>
+        <% if user_signed_in? %>
+          <a class="btn btn-primary btn-lg"><%= link_to 'Create a new project here', new_user_project_path(current_user.id) %></a>
+        <% end %>
         </p>
     </div>
 
@@ -21,7 +23,7 @@
                     <div class="card cards">
                         <div class="card-body card">
                             <% user = user_signed_in? ? current_user : project.users.first %>   
-                            <%= link_to(image_tag(project.screenshot), user_project_url(user.id, project.id)) %>
+                            <%= link_to(image_tag(project.screenshot)) %>
                               <h4 class="card-title"><%= project.title %></h4>
                                 <h6 class="text-muted"><%= link_to project.url %></h6>
                         </div>
