@@ -4,33 +4,31 @@
     <!-- Jumbotron intro -->
     <div class="jumbotron">
         <h1 class="display-3">Hello, Spartan!</h1>
-        <p class="lead">Welcome to the Sparta Global Project Library</p>
+        <p class="text-muted MutedJumbo">Welcome to the Sparta Global Project Library</p>
         <hr class="my-4">
-        <p>Use this site to upload and view data about your projects! make sure to fill out everything correctly, with a detailed description and a snazzy screenshot. </p>
+        <p class="JumboText">Use this site to upload and view data about your projects! make sure to fill out everything correctly, with a detailed description and a snazzy screenshot. </p>
         <p class="lead">
-        <a class="btn btn-primary btn-lg"> </a>
+        <a class="btn btn-primary btn-lg"> Contribute a Project </a>
         </p>
     </div>
 
 
 
     <div class="row">
-        <% @projects.each do |project| %>
-            <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="card cards">
-                    <div class="card-body card">
-                        <img src="<%= project.screenshot %>">
-                          <% user = user_signed_in? ? current_user : project.users.first %>   
-                            <%= link_to project.title, user_project_url(user.id, project.id) %>
-                         <p> <a href="<%= project.url %>" target="_blank"> Project Link </a> </p>
+        <div class="card-deck">
+            <% @projects.each do |project| %>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="width: 20rem;" class="CardStuff">
+                    <div class="card cards">
+                        <div class="card-body card">
+                            <% user = user_signed_in? ? current_user : project.users.first %>   
+                            <%= link_to(image_tag(project.screenshot), user_project_url(user.id, project.id)) %>
+                              <h4 class="card-title"><%= project.title %></h4>
+                                <h6 class="text-muted"><%= link_to project.url %></h6>
+                        </div>
                     </div>
-                </div>
-            </div>  
-        <% end %>
+                </div>  
+            <% end %>
+        </div>
     </div>
 </div>
 
-<% if user_signed_in? %>
-  <button class="newButton"><%= link_to 'Create a new project here', new_user_project_path(current_user.id) %></button>
-
-<% end %>
