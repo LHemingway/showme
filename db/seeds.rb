@@ -8,15 +8,15 @@
 
 user1 = User.create(email: 'user@mail.com', password: 'password')
 
-project2 = Project.create(screenshot: "http://fillmurray.com/400/300", description: "Desc2", technologies: "JQuery", url: "http://fillmurray.com/300/300", public_private: true, title:"Project osphellius 1")
-project3 = Project.create(screenshot: "http://fillmurray.com/400/300", description: "Desc2", technologies: "JQuery", url: "http://fillmurray.com/300/300", public_private: true, title:"Project osphellius 1")
-project4 = Project.create(screenshot: "http://fillmurray.com/400/300", description: "Desc2", technologies: "JQuery", url: "http://fillmurray.com/300/300", public_private: true, title:"Project osphellius 1")
-project5 = Project.create(screenshot: "http://fillmurray.com/400/300", description: "Desc2", technologies: "JQuery", url: "http://fillmurray.com/300/300", public_private: true, title:"Project osphellius 1")
-project6 = Project.create(screenshot: "http://fillmurray.com/400/300", description: "Desc2", technologies: "JQuery", url: "http://fillmurray.com/300/300", public_private: true, title:"Project osphellius 1")
-project7 = Project.create(screenshot: "http://fillmurray.com/400/300", description: "Desc2", technologies: "JQuery", url: "http://fillmurray.com/300/300", public_private: true, title:"Project osphellius 1")
-project8 = Project.create(screenshot: "http://fillmurray.com/400/300", description: "Desc2", technologies: "JQuery", url: "http://fillmurray.com/300/300", public_private: true, title:"Project osphellius 1")
-project9 = Project.create(screenshot: "http://fillmurray.com/400/300", description: "Desc2", technologies: "JQuery", url: "http://fillmurray.com/300/300", public_private: true, title:"Project osphellius 1")
-project10= Project.create(screenshot: "http://fillmurray.com/400/300", description: "Desc2", technologies: "JQuery", url: "http://fillmurray.com/300/300", public_private: true, title:"Project osphellius 1")
+project2 = Project.create(screenshot: "http://fillmurray.com/300/300", description: "Desc2", technologies: "JQuery", url: "http://fillmurray.com/300/300", public_private: true, title:"Project osphellius 1")
+project3 = Project.create(screenshot: "http://fillmurray.com/300/300", description: "Desc2", technologies: "JQuery", url: "http://fillmurray.com/300/300", public_private: true, title:"Project osphellius 1")
+project4 = Project.create(screenshot: "http://fillmurray.com/300/300", description: "Desc2", technologies: "JQuery", url: "http://fillmurray.com/300/300", public_private: true, title:"Project osphellius 1")
+project5 = Project.create(screenshot: "http://fillmurray.com/300/300", description: "Desc2", technologies: "JQuery", url: "http://fillmurray.com/300/300", public_private: true, title:"Project osphellius 1")
+project6 = Project.create(screenshot: "http://fillmurray.com/300/300", description: "Desc2", technologies: "JQuery", url: "http://fillmurray.com/300/300", public_private: true, title:"Project osphellius 1")
+project7 = Project.create(screenshot: "http://fillmurray.com/300/300", description: "Desc2", technologies: "JQuery", url: "http://fillmurray.com/300/300", public_private: true, title:"Project osphellius 1")
+project8 = Project.create(screenshot: "http://fillmurray.com/300/300", description: "Desc2", technologies: "JQuery", url: "http://fillmurray.com/300/300", public_private: true, title:"Project osphellius 1")
+project9 = Project.create(screenshot: "http://fillmurray.com/300/300", description: "Desc2", technologies: "JQuery", url: "http://fillmurray.com/300/300", public_private: true, title:"Project osphellius 1")
+project10= Project.create(screenshot: "http://fillmurray.com/300/300", description: "Desc2", technologies: "JQuery", url: "http://fillmurray.com/300/300", public_private: true, title:"Project osphellius 1")
 
 
 user1.projects << project2
