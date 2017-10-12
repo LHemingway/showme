@@ -6,12 +6,8 @@ class ProjectsController < ApplicationController
 # if user is signed in it will display the current user or user is nil and it will just display projects
 
   def index
-    if user_signed_in?
-      @user = current_user
-    else
-      @user = nil
-    end
     @projects = Project.all
+    @user_index = false
   end
 
   # Find user params and find user projects
@@ -19,6 +15,7 @@ class ProjectsController < ApplicationController
   def index_user
     @user = User.find(params[:id])
     @projects = @user.projects
+    @user_index = true
   end
 
   #find user details and show projects for this user
