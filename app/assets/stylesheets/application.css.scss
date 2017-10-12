@@ -35,7 +35,7 @@ text-align: center;
     padding-bottom: 5px;
     margin-left: 0;
     margin-right: 0;
-    border: 1px solid black;
+    border: none;
 }
 .card > div{
   padding:5px;
@@ -52,108 +52,108 @@ text-align: center;
 }
 
 
-// Small tablets and large smartphones (landscape view)
-$screen-sm-min: 576px;
+// // Small tablets and large smartphones (landscape view)
+// $screen-sm-min: 576px;
 
-// Small tablets (portrait view)
-$screen-md-min: 768px;
+// // Small tablets (portrait view)
+// $screen-md-min: 768px;
 
-// Tablets and small desktops
-$screen-lg-min: 992px;
+// // Tablets and small desktops
+// $screen-lg-min: 992px;
 
-// Large tablets and desktops
-$screen-xl-min: 1200px;
+// // Large tablets and desktops
+// $screen-xl-min: 1200px;
 
-@mixin sm {
-   @media (min-width: #{$screen-sm-min}) {
-       @content;
-   }
-}
+// @mixin sm {
+//    @media (min-width: #{$screen-sm-min}) {
+//        @content;
+//    }
+// }
 
-// Medium devices
-@mixin md {
-   @media (min-width: #{$screen-md-min}) {
-       @content;
-   }
-}
+// // Medium devices
+// @mixin md {
+//    @media (min-width: #{$screen-md-min}) {
+//        @content;
+//    }
+// }
 
-// Large devices
-@mixin lg {
-   @media (min-width: #{$screen-lg-min}) {
-       @content;
-   }
-}
+// // Large devices
+// @mixin lg {
+//    @media (min-width: #{$screen-lg-min}) {
+//        @content;
+//    }
+// }
 
-// Extra large devices
-@mixin xl {
-   @media (min-width: #{$screen-xl-min}) {
-       @content;
-   }
-}
+// // Extra large devices
+// @mixin xl {
+//    @media (min-width: #{$screen-xl-min}) {
+//        @content;
+//    }
+// }
 
-// Custom devices
-@mixin rwd($screen) {
-   @media (min-width: $screen+'px') {
-       @content;
-   }
-}
+// // Custom devices
+// @mixin rwd($screen) {
+//    @media (min-width: $screen+'px') {
+//        @content;
+//    }
+// }
 
-.container-fluid {
-    padding: 0 15px;
-// 576px window width and more
-    @include sm {
-        	padding: 0 20px;
+// .container-fluid {
+//     padding: 0 15px;
+// // 576px window width and more
+//     @include sm {
+//         	padding: 0 20px;
 
-        .col {
-    		position: relative;
-   			top: -40px;
-   			left: -175px;
-	    }
-	    .cards {
-	    	position: relative;
-	    	top: 230px;
-	    	left: 275px;
-	    	padding-top: 10px;
-	    }
-    }
+//         .col {
+//     		position: relative;
+//    			top: -40px;
+//    			left: -175px;
+// 	    }
+// 	    .cards {
+// 	    	position: relative;
+// 	    	top: 230px;
+// 	    	left: 275px;
+// 	    	padding-top: 10px;
+// 	    }
+//     }
 
-// 768px window width and more
-    @include md {
-    	 .col{
-    		position: relative;
-   			top: -40px;
-   			left: -175px;
-	    }
-	    .cards {
-	    	position: relative;
-	    	top: 230px;
-	    	left: 275px;
-	    	padding-top: 10px;
-	    }
+// // 768px window width and more
+//     @include md {
+//     	 .col{
+//     		position: relative;
+//    			top: -40px;
+//    			left: -175px;
+// 	    }
+// 	    .cards {
+// 	    	position: relative;
+// 	    	top: 230px;
+// 	    	left: 275px;
+// 	    	padding-top: 10px;
+// 	    }
 
-    }
+//     }
 
-// 992px window width and more
+// // 992px window width and more
 
-    @include lg {
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 1100px;
-	    .col {
-			position: relative;
-			top: -40px;
-			left: -700px;
-	    }
-	    .cards {
-	    	position: relative;
-	    	top: -80px;
-	    	left: 250px;
+//     @include lg {
+//         margin-left: auto;
+//         margin-right: auto;
+//         max-width: 1100px;
+// 	    .col {
+// 			position: relative;
+// 			top: -40px;
+// 			left: -700px;
+// 	    }
+// 	    .cards {
+// 	    	position: relative;
+// 	    	top: -80px;
+// 	    	left: 250px;
 	    	
-	    }
-   }
+// 	    }
+//    }
 
 
-}
+// }
 
 
 
