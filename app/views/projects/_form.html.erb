@@ -2,7 +2,6 @@
   <% if @project.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
-
       <ul>
       <% @project.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -13,25 +12,24 @@
 
   <div class="field">
     <%= f.label :screenshot %><br />
-    <%= f.text_area :screenshot %>
+    <%= f.text_area :screenshot, placeholder: "Add a link for your screenshot here" %>
   </div>
   <div class="field">
     <%= f.label :description %><br />
-    <%= f.text_area :description %>
+    <%= f.text_area :description, placeholder: "Add a description of your project here" %>
   </div>
   <div class="field">
     <%= f.label :technologies %><br />
-    <%= f.text_area :technologies %>
+    <%= f.text_area :technologies, placeholder: "Add the technologies you have used to create the project here e.g. HTML5" %>
   </div>
   <div class="field">
     <%= f.label :url %><br />
-    <%= f.text_field :url %>
+    <%= f.text_field :url, placeholder: "Add the link to your website here" %>
   </div>
-  <div class="field">
-    <%= f.label :public_private %><br />
-    <%= f.check_box :public_private %>
-  </div>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
