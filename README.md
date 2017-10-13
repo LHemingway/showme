@@ -187,6 +187,24 @@ Working together to get the edit function working so that the user can edit the 
 ##### Abass
 Spartan profiles so the spartans can view their own projects that they have created.
 
+##### Sprint Two Day Two
+
+##### Charlotte
+
+Adding a Bio in the seeds file and updating the seeds file. Updating the App to include Bio in the Sign up and in the edit profile. Checking to make sure that it updates.
+
+Creating the seed file to have actual projects so that it looks like the actual site rather than the prototype.
+
+Styling the forms so that they looked nicer rather than just templates.
+
+##### Abass
+
+Working on Admin rights, being able to destroy projecgs and users.
+
+##### James
+
+
+
 ## Issues
 ### Sprint One
 #### Day One
@@ -239,7 +257,9 @@ At the end of the sprint we had a website locally hosted but when trying to uplo
 
 ##### Issues Related To The Group
 
-
+#### Sprint Two Day Two
+##### Issues Related To The Code
+##### Issues Related To The Group
 
 ## Site
 https://github.com/LHemingway/showme

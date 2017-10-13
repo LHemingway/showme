@@ -3,30 +3,34 @@
   <div class="row">
     <div class="col-md-6">
       <div class="card cards">
-        <div class="card-body card">         
-          <p>
-            <h4>Description:</h4>
-            <%= @project.description %>
-          </p>
-          
-          <p>
-            <h4>Technologies:</h4>
-            <%= @project.technologies %>
-          </p>
-          
-          <p>
-            <h4>Url:</h4>
-            <%= @project.url %>
-          </p>
-          
+        <div class="card-body card">  
+                  
+            <%= link_to(image_tag(@project.screenshot) , user_project_url(@user.id, @project.id)) %> 
+         
+            <div class="project-description"> 
+            <p>
+              <h4>Description:</h4>
+              <%= @project.description %>
+            </p>
+            
+            <p>
+              <h4>Technologies:</h4>
+              <%= @project.technologies %>
+            </p>
+            
+            <p>
+              <h4>Url:</h4>
+              <%= @project.url %>
+            </p>
+            </div>
 
-          <button> <%= link_to 'Homepage', user_projects_path(@project) %> </button>
+            <button> <%= link_to 'Homepage', user_projects_path(@project) %> </button>
+            
+            <% if user_signed_in? %>
+              <button> <%= link_to 'Edit', edit_user_project_path(current_user, @project, @project) %> </button>
+              <button> <%= link_to 'Destroy', user_project_path(@current_user, @project), method: :delete, data: { confirm: 'Are you sure?' } %> </button>
+            <% end %>
           
-          <% if user_signed_in? %>
-            <button> <%= link_to 'Edit', edit_user_project_path(current_user, @project, @project) %> </button>
-            <button> <%= link_to 'Destroy', user_project_path(@current_user, @project), method: :delete, data: { confirm: 'Are you sure?' } %> </button>
-          <% end %>
-     
         </div>
       </div>
     </div>
