@@ -2,18 +2,25 @@
 <!-- column, container of cards -->
 <div class="container-fluid">
     <!-- Jumbotron intro -->
+    <!-- Within the jumbotron, there is an if statement; when user is signed in, they can have access to creating a new project, whereas the public does not have these rights when on the index page -->
     <div class="jumbotron">
         <h1 class="display-3">Hello, Spartan!</h1>
         <p class="text-muted MutedJumbo">Welcome to the Sparta Global Project Library</p>
         <hr class="my-4">
         <p class="JumboText">Use this site to upload and view data about your projects! make sure to fill out everything correctly, with a detailed description and a snazzy screenshot. </p>
         <p class="lead">
-        <a class="btn btn-primary btn-lg"> Contribute a Project </a>
+        <% if user_signed_in? %>
+            <%= link_to 'Create a new project here', new_user_project_path(current_user.id) %>
+        <% end %>
         </p>
     </div>
 
 
 
+<!-- Below is running a ruby method, so for each project do what is in the each method -->
+<!-- Within the each method, is an if else statement -->
+<!-- The if statement is using the @user_index variable which is defined in the projects controller -->
+<!-- In the user_index the variable is true, so when a user is signed in they can view the index page  -->
     <div class="row">
         <div class="card-deck">
             <% @projects.each do |project| %>
@@ -24,10 +31,9 @@
                                 <%= link_to(image_tag(project.screenshot), user_project_url(@user.id, project.id)) %>
                             <% else %>
                                 <%= link_to(image_tag(project.screenshot), user_project_url(project.users.first.id, project.id)) %>
-
                             <% end %>
-                              <h4 class="card-title"><%= project.title %></h4>
-                                <h6 class="text-muted"><%= link_to project.url %></h6>
+                            <h4 class="card-title"><%= project.title %></h4>
+                            <h6 class="text-muted"><%= link_to project.url %></h6>
                         </div>
                     </div>
                 </div>  
