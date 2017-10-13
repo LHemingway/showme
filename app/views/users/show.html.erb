@@ -2,17 +2,36 @@
 
 
 
-<div class="row">
-    <% @user.projects.each do |project| %>
-        <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="card cards">
-                <div class="card-body card">
-                    <img src="<%= project.screenshot %>">
-                      <% user = user_signed_in? ? current_user : project.users.first %>   
-                        <%= link_to project.title, user_project_url(user.id, project.id) %>
-                     <p> <a href="<%= project.url %>" target="_blank"> Project Link </a> </p>
-                </div>
-            </div>
-        </div>  
-    <% end %>
+
+
+
+        <div class="grid">
+            <% @user.projects.each do |project| %>
+                <% if @user_index %>
+                    <figure class="effect-lily">
+                    <% user = user_signed_in? ? current_user : project.users.first %>               
+                        <%= image_tag(project.screenshot) %>             
+                        <%= link_to(user_project_url(user.id, project.id)) do %>     
+                            <figcaption>
+                                <div>
+                                    <h2><span <%= project.title %>></span></h2>
+                                    <p<%= link_to project.url %></p>
+                                </div>
+                            </figcaption>   
+                        <% end %>        
+                    </figure>
+                <% else %>
+                    <figure class="effect-lily">  
+                        <% user = user_signed_in? ? current_user : project.users.first %>
+                        <%= image_tag(project.screenshot) %>             
+                        <%= link_to(user_project_url(project.users.first.id, project.id)) do %>
+                            <figcaption>
+                                <div>
+                                    <h2><%= project.title %></h2>
+                                </div>
+                            </figcaption>   
+                        <% end %>        
+                    </figure>
+                <% end %>
+            <% end %>
 </div>
