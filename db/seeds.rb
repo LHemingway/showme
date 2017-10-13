@@ -6,9 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user1 = User.new(first_names: "Ollie", surname: "Holden", start_date: "12-05-2016", course_path: "Engineering", email: 'user@spartaglobal.com', password: 'password', password_confirmation: 'password')
+user1 = User.new(first_names: "Ollie", surname: "Holden", start_date: "12-05-2016", course_path: "Engineering", email: 'user@mail.com', password: 'password', password_confirmation: 'password', user_type: true)
+user2 = User.new(first_names: "Luke", surname: "Hemingway", start_date: "04-09-2017", course_path: "Engineering", email: 'user2@mail.com', password: 'password', password_confirmation: 'password', user_type: false)
+
+
 
 user1.save!
+user2.save!
 
 project1 = Project.create!(screenshot: "http://fillmurray.com/300/300", description: "Desc2", technologies: "JQuery", url: "Project Link 1", public_private: true, title:"Project osphellius 1")
 project2 = Project.create!(screenshot: "http://fillmurray.com/300/300", description: "Desc2", technologies: "JQuery", url: "Project Link 2", public_private: true, title:"Project osphellius 2")
