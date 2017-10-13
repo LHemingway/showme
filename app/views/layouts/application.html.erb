@@ -17,18 +17,21 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+<!-- The if statements within the navbar allow the admin, spartan and public to access different things -->
+<!-- For the public the homepage and searchbar visible -->
+<!-- If a user is signed in, they have access to their specific projects and can only edit their projects -->
+<!-- If a user who is signed in has admin rights, they have access to all the users -->
             <div class="navbar-collapse collapse" id="navbarSupportedContent" style="">
                 <ul class="navbar-nav mr-auto">
-                    <li>
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-                    <% if user_signed_in? %>
-                        <li class="nav-item">
-                            <a class="nav-link"><%= link_to "My projects", @user %><a>
-                        </li>
 
+                    <% if user_signed_in? && current_user.user_type === false %>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Users</a>
+                            <a class="nav-link" <%= link_to "My projects", @user %><a>
+
+                        </li>
+                    <% elsif user_signed_in? && current_user.user_type === true %>
+                        <li class="nav-item">
+                            <a class="nav-link" <%= link_to "Users", users_path %></a>
                         </li>
                     <% end %>
                 </ul>

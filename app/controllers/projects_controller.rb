@@ -3,14 +3,16 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
 
-# if user is signed in it will display the current user or user is nil and it will just display projects
-
+  # If the user is not signed in, the public can view all the projects
+  # @user_index is false as there is no user signed in, and this links to
+  # the index.html.erb file on line 30-34.
+  # Gets the index page.
   def index
     @projects = Project.all
     @user_index = false
   end
 
-  # Find user params and find user projects
+  # Find user params and all the projects available
   # GET users/1/projects
   def index_user
     @user = User.find(params[:id])
@@ -18,14 +20,14 @@ class ProjectsController < ApplicationController
     @user_index = true
   end
 
-  #find user details and show projects for this user
+  #GETS the users and projects id and shows the project in detail
   # GET users/1/projects/1
   def show
     @user = User.find(params[:user_id])
     @project = Project.find(params[:id])
   end
 
-  # Create new project and bring form up for the new project
+  # Gets the form up for the new project and is achieved by the new method
   # GET users/1/projects/new
   def new
     @project = Project.new
