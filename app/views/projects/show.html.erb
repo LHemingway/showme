@@ -24,15 +24,6 @@
             </p>
             </div>
 
-<<<<<<< HEAD
-            <button> <%= link_to 'Homepage', user_projects_path(@project) %> </button>
-            
-            <% if user_signed_in? %>
-              <button> <%= link_to 'Edit', edit_user_project_path(current_user, @project, @project) %> </button>
-              <button> <%= link_to 'Destroy', user_project_path(@current_user, @project), method: :delete, data: { confirm: 'Are you sure?' } %> </button>
-            <% end %>
-          
-=======
           <button> <%= link_to 'Homepage', user_projects_path(@project) %> </button>
 
 <!-- The logic below is determining if the user has admin rights or not and allowing them to access certain buttons that admins have a right to -->
@@ -43,7 +34,6 @@
             <button> <%= link_to 'Edit', edit_user_project_path(current_user, @project, @project) %> </button>
           <% end %>
      
->>>>>>> dev
         </div>
       </div>
     </div>

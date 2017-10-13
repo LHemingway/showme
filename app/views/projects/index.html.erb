@@ -27,23 +27,6 @@
         <div class="grid">
             <div class="row">
             <% @projects.each do |project| %>
-<<<<<<< HEAD
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="width: 20rem;" class="CardStuff">
-                    <div class="card cards">                         
-                        <% if @user_index %>
-                            <%= link_to(image_tag(project.screenshot), user_project_url(@user.id, project.id)) %>
-                        <% else %>
-                         <%= link_to(image_tag(project.screenshot), user_project_url(project.users.first.id, project.id)) %>
-
-                        <% end %>
-                        <h4 class="card-title"><%= project.title %></h4>
-                            <h6 class="text-muted"><%= link_to project.url %></h6>                               
-                    </div>
-                </div>  
-            <% end %>
-        </div>
-    </div>
-=======
                 <div class="col-4 ProjectItems">
                 <% if @user_index %>
                     <figure class="effect-lily">               
@@ -72,7 +55,6 @@
             </div>
 <% end %>
         </div> 
->>>>>>> dev
 </div>
 
 

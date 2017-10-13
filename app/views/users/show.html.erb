@@ -1,23 +1,7 @@
 <h1>My projects</h1>
 
 
-<<<<<<< HEAD
 
-<div class="row">
-    <% @user.projects.each do |project| %>
-        <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="card cards">
-                <div class="card-body card"> 
-                        <img src="<%= project.screenshot %>">
-                          <% user = user_signed_in? ? current_user : project.users.first %>   
-                            <%= link_to project.title, user_project_url(user.id, project.id) %>
-                            <%= link_to(image_tag(project.screenshot), user_project_url(@user.id, project.id)) %>
-                         <p> <a href="<%= project.url %>" target="_blank"> Project Link </a> </p>
-                </div>
-            </div>
-        </div>  
-    <% end %>
-=======
         <div class="grid">
             <% @user.projects.each do |project| %>
                 <% if @user_index %>
@@ -47,5 +31,4 @@
                     </figure>
                 <% end %>
             <% end %>
->>>>>>> dev
 </div>
