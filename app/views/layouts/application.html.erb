@@ -23,12 +23,11 @@
 <!-- If a user who is signed in has admin rights, they have access to all the users -->
             <div class="navbar-collapse collapse" id="navbarSupportedContent" style="">
                 <ul class="navbar-nav mr-auto">
-                    <li>
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
+
                     <% if user_signed_in? && current_user.user_type === false %>
                         <li class="nav-item">
                             <a class="nav-link" <%= link_to "My projects", @user %><a>
+
                         </li>
                     <% elsif user_signed_in? && current_user.user_type === true %>
                         <li class="nav-item">
