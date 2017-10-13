@@ -50,11 +50,35 @@ text-align: center;
   height:auto;
 }
 
-
 .SignInOnPage {
 	padding-left: 20px;
 }
 
+textarea{
+  width: 300px;
+  height: 150px;
+  border-radius: 8px;
+  border: 1px solid #34BEEF;
+
+}
+
+
+select#user_course_path{
+  border: 1px solid #0B8EC8;
+  border-radius: 8px;
+
+}
+
+input{
+  border: 1px solid #34BEEF;
+  border-radius: 8px;
+}
+
+input[type=submit]{
+  background-color: #0B8EC8;
+  margin-top: 10px;
+  border-radius: 8px;
+}
 
 .ProjectItems {
 
@@ -218,6 +242,7 @@ figure.effect-lily:hover p {
 	-webkit-transition-duration: 0.35s;
 	transition-duration: 0.35s;
 }
+
 
 
 
