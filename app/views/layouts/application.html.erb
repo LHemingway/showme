@@ -8,6 +8,7 @@
     </head>
 
     <body>
+<!-- These features will be available on everypage as its in the layouts folder -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="/">
                 <%= image_tag "logo.svg", class: "img-responsive", :size => "170x80", alt: "Sparta Global" %>
@@ -20,7 +21,7 @@
 <!-- The if statements within the navbar allow the admin, spartan and public to access different things -->
 <!-- For the public the homepage and searchbar visible -->
 <!-- If a user is signed in, they have access to their specific projects and can only edit their projects -->
-<!-- If a user who is signed in has admin rights, they have access to all the users -->
+<!-- If a user who is signed in has admin rights, they have access to all the users and projects -->
             <div class="navbar-collapse collapse" id="navbarSupportedContent" style="">
                 <ul class="navbar-nav mr-auto">
 
@@ -42,7 +43,7 @@
             </div>
         </nav>
         
-
+<!-- This if statement displays who is logged in, or if you want to login/sign up -->
         <div class="SignInOnPage">
         <% if user_signed_in? %>
                       Logged in as <strong><%= current_user.email %></strong>

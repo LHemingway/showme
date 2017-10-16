@@ -12,7 +12,8 @@ class ProjectsController < ApplicationController
     @user_index = false
   end
 
-  # Find user params and all the projects available
+  # Find user params and all the projects available, as @user is defined in @projects
+  # Gets the users, their id and then all the projects
   # GET users/1/projects
   def index_user
     @user = User.find(params[:id])
@@ -27,13 +28,16 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
   end
 
-  # Gets the form up for the new project and is achieved by the new method
+  # Gets the form up for the new project
   # GET users/1/projects/new
   def new
     @project = Project.new
   end
 
-  # Create the new projects using the details from the populated form
+  # Creates the new projects, and then posts it onto the index page
+  # The @project consists of project_params which is defined in the private
+  # And it is being called into this function, as the project_params method defines all the things needed
+  # If statement allows the user to be redirected if the project is being saved
   # POST users/1/projects
   def create
     @project = @user.projects.create(project_params)
@@ -47,9 +51,9 @@ class ProjectsController < ApplicationController
     end
   end
 
-# Brings up the form for the edit with the data pre populated as it is in the specific id of the project
+# Gets the form for the edit with the data pre populated as it is in the specific id of the project
 # GET users/1/projects/1/edit
-# The if statements allow the owner of the project to edit, and if it does not meet the method criteria
+# The if statements allows the owner of the project to edit, and if it does not meet the method criteria
 # the user can not edit the project and is redirected to the homepage
   def edit
     project_owner = current_user.projects.exists?(params[:id])
@@ -60,7 +64,7 @@ class ProjectsController < ApplicationController
     end
   end
   
-  # update using the project params in the populated form
+  # update using the project params in the populated form, once updated it puts it onto the show page
   # PUT users/1/projects/1
   def update
     if @project.update_attributes(project_params)
@@ -72,6 +76,8 @@ class ProjectsController < ApplicationController
   end
 
   # This deletes the project with the id that has been specified by clicking on the project
+  # Uses the delete route
+  # Project has been defined in set_project and this method works due to the before_actionn at top of page
   # DELETE users/1/projects/1
   def destroy
     @project.destroy

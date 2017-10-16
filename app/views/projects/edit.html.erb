@@ -2,5 +2,6 @@
 
 <%= render 'form' %>
 
+<!-- The paths to return to show page required arguments due it being nested -->
 <%= link_to 'Show', [current_user, @project] %> |
 <%= link_to 'Back', user_projects_path(current_user, @project) %>

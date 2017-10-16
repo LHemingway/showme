@@ -1,3 +1,4 @@
+<!-- Arguments for the for defined in line 2, had to be written in this manner as it was nested, so 2 arguments required -->
 <%= form_for([current_user, @project]) do |f| %>
   <% if @project.errors.any? %>
     <div id="error_explanation">

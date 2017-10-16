@@ -1,8 +1,7 @@
-
 <!-- column, container of cards -->
 <div class="container-fluid">
     <!-- Jumbotron intro -->
-    <!-- Within the jumbotron, there is an if statement; when user is signed in, they can have access to creating a new project, whereas the public does not have these rights when on the index page -->
+    <!-- Within the jumbotron, there is an if statement; when user is signed in, they can have access to creating a new project -->
     <div class="jumbotron">
         <% if user_signed_in? %>
             <h1 class="display-3">Hello, <%= current_user.first_names %>!</h1>
@@ -24,20 +23,20 @@
     </div>
 
 
-        <div class="grid">
-            <div class="row">
+    <div class="grid">
+        <div class="row">
             <% @projects.each do |project| %>
                 <div class="col-4 ProjectItems">
                 <% if @user_index %>
                     <figure class="effect-lily">               
                         <%= image_tag(project.screenshot) %>             
                         <%= link_to(user_project_url(@user.id, project.id)) do %>     
-                            <figcaption>
-                                <div>
-                                    <h2><span <%= project.title %>></span></h2>
-                                    <p<%= link_to project.url %></p>
-                                </div>
-                            </figcaption>   
+                        <figcaption>
+                            <div>
+                                <h2><span <%= project.title %>></span></h2>
+                                <p<%= link_to project.url %></p>
+                            </div>
+                        </figcaption>   
                         <% end %>        
                     </figure>
                 <% else %>
@@ -52,8 +51,8 @@
                         <% end %>        
                     </figure>
                 <% end %>
-            </div>
-<% end %>
+                </div>
+            <% end %>
         </div> 
 </div>
 
