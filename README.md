@@ -109,7 +109,7 @@ The next step in planning was deciding on the definition of done.
 The first task after all of the planning was to scaffold the app so we had all the necessary files for the task
 
 #### Sprint One!
-##### Day 1!
+##### Sprint One Day One!
 
 Firstly the team decided who was going to do which task in this sprint.
 
@@ -166,15 +166,27 @@ During today she has been doing the readme, documenting yesterday's achievements
 
 ##### Sprint Review
 
+We failed Sprint One as we didn't deploy in time onto Heroku. Basic functions were done such as authentification, using devise, the public can view the homepage and showpage for the projects and the home button can be viewed on the nav bar. Once logged in the users can edit and delete and view the projects.
 ##### Sprint Retrospective
 
+To assign time better for final push
+
 #### Sprint Two Planning
+7. **As A:** Trainer of Sparta Global **I Want:** To be able to edit my individual profile as well as edit projects and have the ability to delete projects as I see fit. **So That:** I can override mistakes and keep everything up to date.
+8. **As A:** Viewer of the website. **I Want:** To be able to access the website on mobile devices and desktop. **So That:** It doesn't restrict the device I use.
+9. **As A:** Viewer of the site **I Want:** A clean and tasteful page layout. **So That:** I enjoy my experience and it ensures readability.
+10. **As A:** Spartan/Admin **I Want:** To be redirected to the show page after completing the form **So That:** I can see my changes.
+11. **As A:** Viewer of the website **I Want:** To be able to search for project titles. **So That:** I can search for things quicker and find specific projects.
+12. **As A:** Spartan/Admin **I Want:** To be redirected to the index page after deleting an entry in the database. **So That:** I can see it has been removed.
+13. **As A:** Viewer of the website **I Want:** To be able to filter projects by technology used on the index page. **So That:** I can be more efficient in my search for projects with specific technologies.
+
 ### Sprint Two
+
 #### Sprint Two Day One
 
 ##### James
 
-Working on responsiveness of app and styling.
+Working on responsiveness of app and styling. Working on the links to get them connecting to the correct pages.
 
 ##### Charlotte 
 
@@ -187,7 +199,7 @@ Working together to get the edit function working so that the user can edit the 
 ##### Abass
 Spartan profiles so the spartans can view their own projects that they have created.
 
-##### Sprint Two Day Two
+#### Sprint Two Day Two
 
 ##### Charlotte
 
@@ -199,11 +211,13 @@ Styling the forms so that they looked nicer rather than just templates.
 
 ##### Abass
 
-Working on Admin rights, being able to destroy projecgs and users.
+Working on Admin rights, being able to destroy users. Got projects working so that Spartans can view their own projects. Commenting appropriately on code.
 
 ##### James
 
+Form functionality, devise work, index assets, cleaning up forms and cleaned fonts
 
+#### Sprint Review
 
 ## Issues
 ### Sprint One
@@ -248,18 +262,26 @@ There were no issues relating to the group today.
 
 At the end of the sprint we had a website locally hosted but when trying to upload it to Heroku it failed. This means that we couldn't deliver any actual software at this point which was frustrating. This was due to the server not being uploaded at the same time so the site did not know where it was getting the information from.
 
-
 ### Sprint Two
 
 #### Sprint Two Day One
-
 ##### Issues Related To The Code
 
+Admin rights were a big issue for today as no matter what the code put in was it would still do the rights for both the admin and the other users as exactly the same.
+
 ##### Issues Related To The Group
+
+No issues relating to the group today.
 
 #### Sprint Two Day Two
 ##### Issues Related To The Code
+
+Looking into the search bar and realising that this task is too big for the time that we have.
+
+The delete button deletes the user from the database but if they have a project assigned to them it doesn't redirect back to the homepage
+
 ##### Issues Related To The Group
+No issues reslating to the group.
 
 ## Site
 https://github.com/LHemingway/showme
